@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="abb_irb1600_10_12">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+    <xacro:arg name="rws_ip" default="None"/>
+    <xacro:property name="rws_ip" value="$(arg rws_ip)"/>
+    <xacro:arg name="rws_port" default="80"/>
+    <xacro:property name="rws_port" value="$(arg rws_port)"/>
+    <xacro:arg name="use_fake_hardware" default="true"/>
+    <xacro:property name="use_fake_hardware" value="$(arg use_fake_hardware)"/>
+ 
+
+    <!-- Import abb_irb1600_10_12 & workspapce (if) file -->
+    <xacro:include filename="$(find abb_support)/urdf/irb1600_10_12.xacro" />
+
+    
+    <!-- Import control_xacro -->
+    <xacro:include filename="abb_irb1600_10_12.ros2_control.xacro" />
+
+    <xacro:abb_irb1600_10_12_ros2_control 
+      name="FakeSystem" 
+      initial_positions_file="$(arg initial_positions_file)" 
+      rws_ip="${rws_ip}" 
+      rws_port="${rws_port}" 
+      use_fake_hardware="${use_fake_hardware}"/>
+
+</robot>

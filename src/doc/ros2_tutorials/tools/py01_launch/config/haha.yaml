@@ -1,0 +1,13 @@
+/haha:
+  ros__parameters:
+    background_b: 100
+    background_g: 50
+    background_r: 55
+    qos_overrides:
+      /parameter_events:
+        publisher:
+          depth: 1000
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+    use_sim_time: false

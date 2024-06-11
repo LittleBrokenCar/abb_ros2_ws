@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_model_resources)/urdf/common_materials.xacro"/>
+
+  <xacro:macro name="abb_irb1600_10_12" params="prefix">
+    <!-- link list -->
+      <!-- See note 1 in package.xml about the inertial and mass values -->
+    <link name="${prefix}base_link">
+      <inertial>
+        <mass value="77.9595"/>
+        <origin xyz="-0.100374 0.00039 0.061623"/>
+        <inertia ixx="1.31877" ixy="-0.00357" ixz="-0.108872" iyy="2.27079" iyz="0.002436" izz="3.38301"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/collision/base_link.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/visual/base_link.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </visual>
+    </link>
+    <link name="${prefix}link_1">
+      <inertial>
+        <mass value="109.27"/>
+        <origin xyz="0.051997 -0.012049 0.343843"/>
+        <inertia ixx="2.31736" ixy="-0.187562" ixz="0.755864" iyy="3.80778" iyz="-0.261155" izz="2.68723"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/collision/link_1.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/visual/link_1.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </visual>
+    </link>
+    <link name="${prefix}link_2">
+      <inertial>
+        <mass value="7.96858"/>
+        <origin xyz="-0.000419 -0.182815 0.202852"/>
+        <inertia ixx="0.268221" ixy="-0.000091" ixz="0.000409" iyy="0.273809" iyz="0.018965" izz="0.020741"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600_10_12/collision/link_2.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600_10_12/visual/link_2.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </visual>
+    </link>
+    <link name="${prefix}link_3">
+      <inertial>
+        <mass value="16.4422"/>
+        <origin xyz="0.022198 0.018609 -0.013548"/>
+        <inertia ixx="0.115461" ixy="-0.007384" ixz="0.001925" iyy="0.26568" iyz="-0.008741" izz="0.267898"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/collision/link_3.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/visual/link_3.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </visual>
+    </link>
+    <link name="${prefix}link_4">
+      <inertial>
+        <mass value="2.92187"/>
+        <origin xyz="0.165287 -0.003005 0.001623"/>
+        <inertia ixx="0.005016" ixy="-0.000373" ixz="-0.000077" iyy="0.027084" iyz="-0.000002" izz="0.028142"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/collision/link_4.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/visual/link_4.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </visual>
+    </link>
+    <link name="${prefix}link_5">
+      <inertial>
+        <mass value="0.192333"/>
+        <origin xyz="-0.000253 -0.000289 -0.000151"/>
+        <inertia ixx="0.000128" ixy="0" ixz="0" iyy="0.00016" iyz="0" izz="0.000107"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/collision/link_5.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/visual/link_5.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </visual>
+    </link>
+    <link name="${prefix}link_6">
+      <inertial>
+        <mass value="0.035092"/>
+        <origin xyz="-0.026099 -0.000034 -0.000162"/>
+        <inertia ixx="0.000006" ixy="0" ixz="0" iyy="0.000036" iyz="0" izz="0.000036"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/collision/link_6.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/irb1600/visual/link_6.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </visual>
+    </link>
+    <!-- end of link list -->
+    <!-- joint list -->
+    <!-- See note 2 in package.xml about effort limits and dynamics values -->
+    <joint type="revolute" name="${prefix}joint_1">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <limit lower="-${pi}" upper="${pi}" effort="1000" velocity="2.618"/>
+      <dynamics damping="50.0" friction="1.0"/>
+    </joint>
+    <joint type="revolute" name="${prefix}joint_2">
+      <origin xyz="0.15 0 0.4865" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <limit lower="-1.0995" upper="1.9198" effort="1000" velocity="2.7925"/>
+      <dynamics damping="50.0" friction="1.0"/>
+    </joint>
+    <joint type="revolute" name="${prefix}joint_3">
+      <origin xyz="0 0 0.475" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <limit lower="-4.1015" upper="0.9599" effort="1000" velocity="2.9670"/>
+      <dynamics damping="50.0" friction="1.0"/>
+    </joint>
+    <joint type="revolute" name="${prefix}joint_4">
+      <origin xyz="0.300 0 0" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <limit lower="-3.4906" upper="3.4906" effort="1000" velocity="5.5850"/>
+      <dynamics damping="50.0" friction="1.0"/>
+    </joint>
+    <joint type="revolute" name="${prefix}joint_5">
+      <origin xyz="0.300 0 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <limit lower="-2.0071" upper="2.0071" effort="1000" velocity="6.9813"/>
+      <dynamics damping="10.0" friction="1.0"/>
+    </joint>
+    <joint type="revolute" name="${prefix}joint_6">
+      <origin xyz="0.065 0 0" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <limit lower="-6.9813" upper="6.9813" effort="1000" velocity="7.854"/>
+      <dynamics damping="1.0" friction="1.0"/>
+    </joint>
+    <!-- end of joint list -->
+
+    <!-- tool list -->
+    <!-- See note 1 in package.xml about the inertial and mass values -->
+    <link name="${prefix}tool_1">
+      <inertial>
+        <mass value="0.474"/>
+        <origin xyz="0.05379 0.02230 -0.02882"/>
+        <inertia ixx="0.0015256" ixy="0" ixz="-0.00010869" iyy="0.000920396" iyz="-0.0000677" izz="0.0009611"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/tool/collision/tool_1.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/tool/visual/tool_1.stl"/>
+        </geometry>
+        <xacro:material_abb_graphite_white />
+      </visual>
+      </link>
+      <joint type="fixed" name="${prefix}joint_tool">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="${prefix}link_6"/>
+        <child link="${prefix}tool_1"/>
+      </joint>
+    <!-- target center point list -->
+    <link name="${prefix}tcp"/>
+    <joint type="fixed" name="${prefix}tcp">
+      <origin xyz="0.08 0 -0.1455" rpy="0 0 0"/>
+      <parent link="${prefix}tool_1"/>
+      <child link="${prefix}tcp"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

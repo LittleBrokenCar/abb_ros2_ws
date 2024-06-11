@@ -1,0 +1,9 @@
+pose_estimation:
+    ros__parameters:
+        pattern: "CHESSBOARD"
+        image_topic: "/camera/camera/color/image_raw"
+        camera_info_topic: "/camera/camera/color/camera_info"
+        publish_image_topic: "/image/detected"
+        width: 9
+        height: 6
+        chessboard_square_size: 0.026

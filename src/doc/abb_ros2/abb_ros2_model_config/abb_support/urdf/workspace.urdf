@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_model_resources)/urdf/common_materials.xacro"/>
+
+  <xacro:macro name="workspace" params="prefix">
+
+    <!-- obstacle list -->
+    <!-- <link name="${prefix}desk">
+      <inertial>
+        <mass value="1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="1" ixy="1" ixz="1" iyy="1" iyz="1" izz="1"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/workspace/collision/desk.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/workspace/visual/desk.stl"/>
+        </geometry>
+        <xacro:material_abb_white />
+      </visual>
+    </link>
+    <joint type="fixed" name="${prefix}desk">
+      <origin xyz="1 0 0.71" rpy="0 0 ${radians(90)}"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}desk"/>
+    </joint> -->
+        <!-- substrate list -->
+    <link name="${prefix}substrate_frame">
+      <inertial>
+        <mass value="1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="1" ixy="1" ixz="1" iyy="1" iyz="1" izz="1"/>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/workspace/collision/substrate.stl"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_support/meshes/workspace/visual/substrate.stl"/>
+        </geometry>
+        <xacro:material_abb_white />
+      </visual>
+    </link>
+    <joint type="fixed" name="${prefix}substrate_frame">
+      <origin xyz="0.86741412459991 0.015560290082170872 0.4843739001714129" rpy="${radians(180)} 0 ${radians(90)}"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}substrate_frame"/>
+    </joint> 
+  </xacro:macro>
+</robot>

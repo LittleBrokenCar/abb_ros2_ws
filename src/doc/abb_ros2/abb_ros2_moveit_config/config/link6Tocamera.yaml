@@ -1,0 +1,12 @@
+# Transformation from end effector link_6 to camera
+Link6ToCamera_static_frame_node:
+  ros__parameters:
+    l6Tc_translation: 
+      - 0.045 # x
+      - 0.03096 # y
+      - -0.055 # z
+    l6Tc_quaternion:
+      - 0.70710678 # x
+      - -0.70710678 # y
+      - 0.0 # z
+      - 0.0 # w

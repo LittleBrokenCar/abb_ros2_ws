@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="abb_irb1600_10_12" xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:arg name="load_workspace_model" default="false"/>
+<xacro:property name="load_workspace_model" value="$(arg load_workspace_model)"/>
+
+  <!-- Robot description -->
+  <xacro:include filename="$(find abb_support)/urdf/irb1600_10_12_macro.xacro"/>
+  <xacro:abb_irb1600_10_12 prefix=""/>
+
+  <!-- Import workspace urdf file -->
+  <xacro:if value="${load_workspace_model}"> 
+    <xacro:include filename="$(find abb_support)/urdf/workspace.urdf" />
+    <xacro:workspace prefix="" />
+  </xacro:if>
+</robot>

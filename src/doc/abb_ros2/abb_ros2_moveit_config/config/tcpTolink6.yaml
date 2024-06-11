@@ -1,0 +1,12 @@
+# translation form tcp to link6 (planning point)
+flow_sensor_fabrication_demo:
+  ros__parameters:
+    tcpTl6_qx: 0.0
+    tcpTl6_qy: 0.0
+    tcpTl6_qz: 0.0
+    tcpTl6_qw: 1.0
+    tcpTl6_x: -0.08
+    tcpTl6_y: 0.0
+    tcpTl6_z: 0.175
+
+

@@ -1,0 +1,12 @@
+# Transformation from camera frame to object frame
+CameraToObject_static_frame_node:
+  ros__parameters:
+    cTo_translation: # x y z
+      - 0.1359553878781377
+      - 0.059886755026929396
+      - 0.4634923918183592
+    cTo_quaternion: # x y z w
+      - 0.012625567256588756
+      - -0.00939297536905415
+      - 0.9993823250687615
+      - 0.03142189372590537

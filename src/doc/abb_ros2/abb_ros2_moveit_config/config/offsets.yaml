@@ -1,0 +1,7 @@
+# transform the substrate origin in object frame to base_link
+substrate_location_node:
+  ros__parameters:
+    offsets: 
+      - 0.115 # x
+      - 0.0755 # y
+      - -0.043 # z

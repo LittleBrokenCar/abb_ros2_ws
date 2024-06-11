@@ -1,0 +1,23 @@
+<robot name="demo02_link">
+    <material name="default_color">
+        <color rgba="0.5 0.6 0.2 0.5"/>
+    </material>
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <!-- <box size="0.0 0.0 0.0"/> -->
+
+                <!-- <sphere radius="0.5"/> -->
+
+                <!-- <cylinder radius="0.1" length="2.0"/> -->
+                <mesh filename="package://py06_urdf/meshes/waffle_pi.stl" scale="1.0 1.0 1.0"/>
+            </geometry>
+            <!-- <origin xyz="1.0 2.0 3.0" rpy="0.0 0.0 0.5"/> -->
+            <!-- <material name="my_color">
+                <color rgba="0.8 0.6 0.2 0.5"/>  
+            </material> -->
+            <material name="default_color"/> 
+        </visual>
+    </link>
+    
+</robot>

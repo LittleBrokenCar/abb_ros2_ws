@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/maple/Documents/ws01_plumbing/install/base_interfaces/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/maple/Documents/ws01_plumbing/install/base_interfaces/local/lib/python3.10/dist-packages"
+    ]
+}
